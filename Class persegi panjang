@@ -1,0 +1,39 @@
+class PersegiPanjang:
+    def _init_(self, p1, p2):
+        self.panjang = p1
+        self.lebar = p2
+
+    def hitungkeliling(self):
+        return 2 * (self.panjang + self.lebar)
+
+    def hitungluas(self):
+        return self.panjang * self.lebar
+
+    def _str_(self):
+        return f"Persegi panjang dengan panjang {self.panjang} cm dan lebar {self.lebar} cm"
+    
+def main():
+    try:
+        panjang = float(input("Masukkan Panjang Persegi Panjang (cm): "))
+        lebar = float(input("Masukkan Lebar Persegi Panjang (cm): "))
+
+        
+        if panjang <= 0 or lebar <= 0:
+            print("Error: Panjang dan lebar harus lebih besar d ari 0.")
+            return
+
+
+        
+        pp = PersegiPanjang(panjang, lebar)
+
+
+        print(pp)  
+        print("Keliling:", pp.hitungkeliling(), "cm")
+        print("Luas:", pp.hitungluas(), "cm²")
+
+    except ValueError:
+        print("Error: Input harus berupa angka.")
+
+
+if __name__ == "__main__":
+    main()
